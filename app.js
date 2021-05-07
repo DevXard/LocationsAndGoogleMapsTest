@@ -5,11 +5,12 @@ const app = express();
 const ExpressError = require('./helpers/expressError');
 
 
+
 app.use(express.json());
 
-const coordinatesRoutes = require('./routes/coordinates');
+const coordinatesRoutes = require('./routes/coordinatesRoutes');
 
-// app.use('/location', coordinatesRoutes)
+app.use('/location', coordinatesRoutes)
 
 app.get('/', (req, res) => res.send("Hello"))
 
