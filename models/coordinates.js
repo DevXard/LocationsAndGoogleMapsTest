@@ -14,6 +14,14 @@ class Coordinate{
 
         return register.rows[0]
     }
+
+    static async getAll(long, lat){
+        const result = await db.query(`
+        SELECT * FROM coordinates;
+        `)
+        const location = result.rows;
+        return location
+    }
 }
 
 module.exports = Coordinate;
